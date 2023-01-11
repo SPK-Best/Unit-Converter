@@ -8,14 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var inputNumber: String = "";
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            VStack {
+                VStack {
+                    Text("Unit Converter")
+                        .font(.title)
+                        .foregroundColor(.blue)
+                        .fontWeight(.bold)
+                }
+                .padding()
+                TextField("Input Number", text: $inputNumber)
+                    .padding(.all)
+                    .border(.blue)
+            }.padding()
+            HStack {
+                Button("Reset") {
+                    self.inputNumber = "";
+                }
+                .padding(.all)
+                .border(.red)
+                .foregroundColor(.blue)
+                Button("Convert") {
+                }                
+                .padding(.all)
+                .border(.green)
+                .backgroundStyle(.pink)
+            }
         }
-        .padding()
     }
 }
 
